@@ -183,25 +183,22 @@
 
 <hr>
 
-<h2>Ejercicio 7: Uso de gettype()</h2>
+<h2>Ejercicio 7: Uso de la variable $_SERVER</h2>
 <?php
-    $a = "0";
-    $b = "TRUE";
-    $c = FALSE;
-    $d = ($a OR $b);
-    $e = ($a AND $c);
-    $f = ($a XOR $b);
+    // a. La versión de Apache y PHP
+    // La variable 'SERVER_SOFTWARE' usualmente contiene ambos datos.
+    $software_servidor = isset($_SERVER['SERVER_SOFTWARE']) ? $_SERVER['SERVER_SOFTWARE'] : 'No disponible';
+    echo "<p><strong>a. Versión de Apache y PHP:</strong> " . htmlspecialchars($software_servidor) . "</p>";
 
-    echo "<p>El tipo de la variable \$a es: <strong>" . gettype($a) . "</strong></p>"; // string
-    echo "<p>El tipo de la variable \$b es: <strong>" . gettype($b) . "</strong></p>"; // string
-    echo "<p>El tipo de la variable \$c es: <strong>" . gettype($c) . "</strong></p>"; // boolean
-    echo "<p>El tipo de la variable \$d es: <strong>" . gettype($d) . "</strong></p>"; // boolean
-    echo "<p>El tipo de la variable \$e es: <strong>" . gettype($e) . "</strong></p>"; // boolean
-    echo "<p>El tipo de la variable \$f es: <strong>" . gettype($f) . "</strong></p>"; // boolean
+    // b. El nombre del sistema operativo (servidor)
+    // La función php_uname() es más específica para el SO.
+    $sistema_operativo = php_uname();
+    echo "<p><strong>b. Sistema operativo del servidor:</strong> " . htmlspecialchars($sistema_operativo) . "</p>";
 
-    // Liberar variables
-    unset($a, $b, $c, $d, $e, $f);
+    // c. El idioma del navegador (cliente)
+    // Se obtiene de las cabeceras que envía el navegador.
+    $idioma_navegador = isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? $_SERVER['HTTP_ACCEPT_LANGUAGE'] : 'No disponible';
+    echo "<p><strong>c. Idioma del navegador del cliente:</strong> " . htmlspecialchars($idioma_navegador) . "</p>";
 ?>
-
 </body>
 </html>
