@@ -22,6 +22,27 @@ include "src/funciones.php";
     }
     ?>
 
+
+    <h2>Ejercicio 2: Secuencia impar, par, impar</h2>
+    <?php
+    $resultado = generarSecuenciaImparParImpar();
+    $matriz = $resultado["matriz"];
+    $iteraciones = $resultado["iteraciones"];
+    $totalNumeros = $resultado["totalNumeros"];
+
+    echo "<table border='1' cellpadding='5'>";
+    foreach ($matriz as $fila) {
+        echo "<tr>";
+        foreach ($fila as $num) {
+            echo "<td>$num</td>";
+        }
+        echo "</tr>";
+    }
+    echo "</table>";
+
+    echo "<p>$totalNumeros números obtenidos en $iteraciones iteraciones.</p>";
+    ?>
+
     <h2>Ejemplo de POST</h2>
     <form action="http://localhost/tecweb/practicas/p04/index.php" method="post">
         Name: <input type="text" name="name"><br>
