@@ -72,6 +72,29 @@ include "src/funciones.php";
     echo "</table>";
     ?>
 
+     <h2>Ejercicio 5: Validar edad y sexo</h2>
+    <form method="post" action="index.php">
+        <label for="edad">Edad:</label>
+        <input type="number" name="edad" id="edad" required min="1" max="120" />
+        <br/><br/>
+        <label for="sexo">Sexo:</label>
+        <select name="sexo" id="sexo" required>
+            <option value="">--Seleccione--</option>
+            <option value="femenino">Femenino</option>
+            <option value="masculino">Masculino</option>
+        </select>
+        <br/><br/>
+        <button type="submit" name="ejercicio5">Enviar</button>
+    </form>
+
+    <?php
+    if (isset($_POST['ejercicio5'])) {
+        $edad = intval($_POST['edad']);
+        $sexo = strtolower($_POST['sexo']); // por si viene en mayúsculas
+        echo "<p>" . validarEdadSexo($edad, $sexo) . "</p>";
+    }
+    ?>
+
     <h2>Ejemplo de POST</h2>
     <form action="http://localhost/tecweb/practicas/p04/index.php" method="post">
         Name: <input type="text" name="name"><br>
