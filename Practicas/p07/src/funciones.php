@@ -73,3 +73,13 @@ function encontrarMultiploDoWhile($divisor) {
         "intentos" => $contador
     ];
 }
+
+
+// Ejercicio 4: crear arreglo de códigos ASCII (97–122) con letras de 'a' a 'z'
+function crearArregloAscii() {
+    $arreglo = [];
+    for ($i = 97; $i <= 122; $i++) {
+        $arreglo[$i] = chr($i); // convierte el código ASCII en carácter
+    }
+    return $arreglo;
+}

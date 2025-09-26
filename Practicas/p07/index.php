@@ -60,6 +60,18 @@ include "src/funciones.php";
     }
     ?>
 
+        <h2>Ejercicio 4: Arreglo de ASCII con letras a-z</h2>
+    <?php
+    $arreglo = crearArregloAscii();
+
+    echo "<table border='1' cellpadding='5'>";
+    echo "<tr><th>Índice</th><th>Valor</th></tr>";
+    foreach ($arreglo as $key => $value) {
+        echo "<tr><td>$key</td><td>$value</td></tr>";
+    }
+    echo "</table>";
+    ?>
+
     <h2>Ejemplo de POST</h2>
     <form action="http://localhost/tecweb/practicas/p04/index.php" method="post">
         Name: <input type="text" name="name"><br>
