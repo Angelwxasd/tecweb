@@ -43,6 +43,23 @@ include "src/funciones.php";
     echo "<p>$totalNumeros números obtenidos en $iteraciones iteraciones.</p>";
     ?>
 
+
+    <h2>Ejercicio 3: Buscar el primer múltiplo de un número dado</h2>
+    <?php
+    if (isset($_GET['divisor'])) {
+        $divisor = intval($_GET['divisor']);
+
+        $resultadoWhile = encontrarMultiploWhile($divisor);
+        $resultadoDoWhile = encontrarMultiploDoWhile($divisor);
+
+        echo "<p><strong>Con while:</strong> Se encontró el número {$resultadoWhile['numero']} en {$resultadoWhile['intentos']} intentos.</p>";
+        echo "<p><strong>Con do-while:</strong> Se encontró el número {$resultadoDoWhile['numero']} en {$resultadoDoWhile['intentos']} intentos.</p>";
+    } else {
+        echo "<p>Pasa un divisor en la URL usando <code>?divisor=</code>. Ejemplo: 
+        <br> <code>http://localhost/p07/index.php?divisor=7</code></p>";
+    }
+    ?>
+
     <h2>Ejemplo de POST</h2>
     <form action="http://localhost/tecweb/practicas/p04/index.php" method="post">
         Name: <input type="text" name="name"><br>

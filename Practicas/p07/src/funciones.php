@@ -38,3 +38,38 @@ function generarSecuenciaImparParImpar() {
         "totalNumeros" => $totalNumeros
     ];
 }
+
+// Ejercicio 3a: buscar con while el primer número múltiplo de $divisor
+function encontrarMultiploWhile($divisor) {
+    $contador = 0;
+    $numero = null;
+
+    while (true) {
+        $contador++;
+        $numero = rand(1, 1000);
+        if ($numero % $divisor == 0) {
+            break;
+        }
+    }
+
+    return [
+        "numero" => $numero,
+        "intentos" => $contador
+    ];
+}
+
+// Ejercicio 3b: buscar con do-while el primer número múltiplo de $divisor
+function encontrarMultiploDoWhile($divisor) {
+    $contador = 0;
+    $numero = null;
+
+    do {
+        $contador++;
+        $numero = rand(1, 1000);
+    } while ($numero % $divisor != 0);
+
+    return [
+        "numero" => $numero,
+        "intentos" => $contador
+    ];
+}
