@@ -92,3 +92,82 @@ function validarEdadSexo($edad, $sexo) {
         return "Lo sentimos, no cumple con los requisitos de edad o sexo.";
     }
 }
+
+// Ejercicio 6: Registro de parque vehicular
+function registroParqueVehicular() {
+    // Arreglo asociativo con 15 autos
+    $autos = [
+        "ABC1234" => [
+            "Auto" => ["marca" => "HONDA", "modelo" => 2020, "tipo" => "camioneta"],
+            "Propietario" => ["nombre" => "Alfonzo Esparza", "ciudad" => "Puebla, Pue.", "direccion" => "C.U., Jardines de San Manuel"]
+        ],
+        "DEF5678" => [
+            "Auto" => ["marca" => "MAZDA", "modelo" => 2019, "tipo" => "sedan"],
+            "Propietario" => ["nombre" => "Ma. del Consuelo Molina", "ciudad" => "Puebla, Pue.", "direccion" => "97 oriente"]
+        ],
+        "GHI9012" => [
+            "Auto" => ["marca" => "TOYOTA", "modelo" => 2021, "tipo" => "hachback"],
+            "Propietario" => ["nombre" => "Juan Pérez", "ciudad" => "Cholula, Pue.", "direccion" => "Av. Reforma 45"]
+        ],
+        "JKL3456" => [
+            "Auto" => ["marca" => "NISSAN", "modelo" => 2022, "tipo" => "sedan"],
+            "Propietario" => ["nombre" => "María López", "ciudad" => "Puebla, Pue.", "direccion" => "Boulevard Atlixco 12"]
+        ],
+        "MNO7890" => [
+            "Auto" => ["marca" => "FORD", "modelo" => 2018, "tipo" => "camioneta"],
+            "Propietario" => ["nombre" => "Pedro Ramírez", "ciudad" => "Tehuacán, Pue.", "direccion" => "Calle 3 Sur 120"]
+        ],
+        "PQR2345" => [
+            "Auto" => ["marca" => "CHEVROLET", "modelo" => 2020, "tipo" => "sedan"],
+            "Propietario" => ["nombre" => "Ana Torres", "ciudad" => "Puebla, Pue.", "direccion" => "Col. La Paz 7"]
+        ],
+        "STU6789" => [
+            "Auto" => ["marca" => "KIA", "modelo" => 2021, "tipo" => "hachback"],
+            "Propietario" => ["nombre" => "Luis García", "ciudad" => "Atlixco, Pue.", "direccion" => "Av. Morelos 55"]
+        ],
+        "VWX0123" => [
+            "Auto" => ["marca" => "HYUNDAI", "modelo" => 2019, "tipo" => "sedan"],
+            "Propietario" => ["nombre" => "Sofía Martínez", "ciudad" => "Puebla, Pue.", "direccion" => "Calle 5 de Mayo 200"]
+        ],
+        "YZA4567" => [
+            "Auto" => ["marca" => "VOLKSWAGEN", "modelo" => 2022, "tipo" => "camioneta"],
+            "Propietario" => ["nombre" => "Carlos Hernández", "ciudad" => "Cholula, Pue.", "direccion" => "Av. 2 Poniente 33"]
+        ],
+        "BCD8901" => [
+            "Auto" => ["marca" => "FIAT", "modelo" => 2018, "tipo" => "hachback"],
+            "Propietario" => ["nombre" => "Verónica Ruiz", "ciudad" => "Puebla, Pue.", "direccion" => "Col. La Noria 14"]
+        ],
+        "EFG2345" => [
+            "Auto" => ["marca" => "MITSUBISHI", "modelo" => 2020, "tipo" => "sedan"],
+            "Propietario" => ["nombre" => "Jorge Castillo", "ciudad" => "Puebla, Pue.", "direccion" => "Calle 10 Norte 66"]
+        ],
+        "HIJ6789" => [
+            "Auto" => ["marca" => "SUZUKI", "modelo" => 2019, "tipo" => "hachback"],
+            "Propietario" => ["nombre" => "Paula Vega", "ciudad" => "Tehuacán, Pue.", "direccion" => "Callejón del Sol 22"]
+        ],
+        "KLM0123" => [
+            "Auto" => ["marca" => "JEEP", "modelo" => 2021, "tipo" => "camioneta"],
+            "Propietario" => ["nombre" => "Ricardo Mendoza", "ciudad" => "Puebla, Pue.", "direccion" => "Av. Juárez 10"]
+        ],
+        "NOP4567" => [
+            "Auto" => ["marca" => "HONDA", "modelo" => 2022, "tipo" => "sedan"],
+            "Propietario" => ["nombre" => "Gabriela Flores", "ciudad" => "Atlixco, Pue.", "direccion" => "Calle Hidalgo 5"]
+        ],
+        "QRS8901" => [
+            "Auto" => ["marca" => "FORD", "modelo" => 2019, "tipo" => "hachback"],
+            "Propietario" => ["nombre" => "Miguel Ángel", "ciudad" => "Puebla, Pue.", "direccion" => "Av. Reforma 77"]
+        ]
+    ];
+
+    return $autos;
+}
+
+// Función para consultar un auto por matrícula
+function buscarAutoPorMatricula($matricula) {
+    $autos = registroParqueVehicular();
+    if (isset($autos[$matricula])) {
+        return $autos[$matricula];
+    } else {
+        return null;
+    }
+}

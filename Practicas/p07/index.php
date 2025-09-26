@@ -95,6 +95,37 @@ include "src/funciones.php";
     }
     ?>
 
+    <h2>Ejercicio 6: Parque Vehicular</h2>
+
+<form method="post" action="index.php">
+    <label for="matricula">Consultar por matrícula:</label>
+    <input type="text" name="matricula" id="matricula" maxlength="7" placeholder="ABC1234">
+    <button type="submit" name="buscar">Buscar</button>
+    <button type="submit" name="mostrarTodos">Mostrar todos</button>
+</form>
+
+<?php
+if (isset($_POST['buscar'])) {
+    $matricula = strtoupper(trim($_POST['matricula']));
+    $resultado = buscarAutoPorMatricula($matricula);
+    if ($resultado) {
+        echo "<pre>";
+        print_r([$matricula => $resultado]);
+        echo "</pre>";
+    } else {
+        echo "<p>No se encontró un auto con matrícula $matricula.</p>";
+    }
+}
+
+if (isset($_POST['mostrarTodos'])) {
+    $todos = registroParqueVehicular();
+    echo "<pre>";
+    print_r($todos);
+    echo "</pre>";
+}
+?>
+
+
     <h2>Ejemplo de POST</h2>
     <form action="http://localhost/tecweb/practicas/p04/index.php" method="post">
         Name: <input type="text" name="name"><br>
