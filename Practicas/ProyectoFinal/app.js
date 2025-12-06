@@ -1,3 +1,19 @@
+$.ajax({
+    url: './backend/check-session.php',
+    type: 'GET',
+    success: function(response) {
+        let session = JSON.parse(response);
+        if (!session.logged) {
+            // Si no está logueado, patada al login
+            window.location.href = 'login.html';
+        } else {
+            // Si sí está, ponemos su nombre en la barra (opcional)
+            console.log("Bienvenido: " + session.name);
+        }
+    }
+});
+
+
 // JSON BASE A MOSTRAR EN FORMULARIO
 var baseJSON = {
     "precio": 0.0,
